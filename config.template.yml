@@ -1,0 +1,12 @@
+services:
+  - name: http-over-wss
+    addr: :8080
+    handler:
+      type: http
+      auth:
+        username: ${PROXY_USER}
+        password: ${PROXY_PASS}
+    listener:
+      type: wss
+      metadata:
+        path: /proxy-ws
